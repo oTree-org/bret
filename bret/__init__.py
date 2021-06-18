@@ -41,7 +41,7 @@ class Constants(BaseConstants):
     players_per_group = None
     results_1_round_template = __name__ + '/results_1_round.html'
     results_multi_round_template = __name__ + '/results_multi_round.html'
-    instructions_template = __name__ + '/instructions.html'
+    num_boxes = NUM_ROWS * NUM_COLS
 
 
 class Subsession(BaseSubsession):
@@ -94,8 +94,7 @@ class Instructions(Page):
     @staticmethod
     def vars_for_template(player: Player):
         return dict(
-            num_boxes=NUM_ROWS * NUM_COLS,
-            num_nobomb=NUM_ROWS * NUM_COLS - 1,
+            num_nobomb=Constants.num_boxes - 1,
             Lexicon=Lexicon,
             **which_language,
             **config_dict,
@@ -114,7 +113,7 @@ class Game(Page):
 
     @staticmethod
     def vars_for_template(player: Player):
-        return dict(Lexicon=Lexicon, num_boxes=NUM_ROWS * NUM_COLS, **which_language)
+        return dict(Lexicon=Lexicon, **which_language)
 
     @staticmethod
     def js_vars(player: Player):
@@ -145,7 +144,6 @@ class Results(Page):
         return dict(
             player_in_all_rounds=player.in_all_rounds(),
             box_value=BOX_VALUE,
-            boxes_total=NUM_ROWS * NUM_COLS,
             boxes_collected=player.boxes_collected,
             bomb=player.bomb,
             bomb_row=player.bomb_row,
