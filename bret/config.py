@@ -1,5 +1,5 @@
 from otree.api import cu
-
+#todo add git comment if we are following the original documentation, this file should be called `setup.py`
 # ---------------------------------------------------------------------------------------------------------------- #
 # --- Overall Settings and Appearance --- #
 # ---------------------------------------------------------------------------------------------------------------- #
@@ -12,8 +12,8 @@ BOX_VALUE = cu(1)
 
 # number of rows and columns
 # i.e. the total number of boxes is determined by <num_rows> times <num_cols>
-NUM_ROWS = 8
-NUM_COLS = 8
+NUM_ROWS = 4
+NUM_COLS = 4
 
 # box height and box width in pixels
 # make sure that the size of the boxes fits the screen of the device
@@ -22,13 +22,13 @@ BOX_HEIGHT = '50px'
 BOX_WIDTH = '50px'
 
 # number of rounds to be played
-NUM_ROUNDS = 2
+NUM_ROUNDS = 1
 
 # determines whether all rounds played are payed-off or whether one round is randomly chosen for payment
 # if <random_payoff = True>, one round is randomly determined for payment
 # if <random_payoff = False>, the final payoff of the task is the sum of all rounds played
 # note that this is only of interest for the case of <num_rounds> larger than 1
-RANDOM_PAYOFF = True
+RANDOM_PAYOFF = False
 
 # if <instructions = True>, a separate template "Instructions.html" is rendered prior to the task in round 1
 # if <instructions = False>, the task starts immediately (e.g. in case of printed instructions)
@@ -54,11 +54,11 @@ RESULTS = True
 # in case of <dynamic = True>, game play is affected by the variables <time_interval> and <random> below
 # if <dynamic = False>, subjects collect as many boxes as they want by clicking or entering the respective number
 # in case of <dynamic = False>, game play is affected by the variables <random>, <devils_game> and <undoable>
-DYNAMIC = True
+DYNAMIC = False
 
 # time interval between single boxes being collected (in seconds)
 # note that this only affects game play if <dynamic = True>
-TIME_INTERVAL = 1.00
+TIME_INTERVAL = 1.0
 
 # collect boxes randomly or systematically
 # if <random = False>, boxes are collected row-wise one-by-one, starting in the top-left corner
