@@ -408,7 +408,7 @@
 			this.feedback = this._getConstant('FEEDBACK');
 			this.undoable = this._getConstant('UNDOABLE');
 
-			this.input = this._getConstant('DEVILS_GAME');
+			this.input = this._getConstant('show_input');
 		};
 
 	/**
