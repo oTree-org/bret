@@ -51,13 +51,24 @@
             In the following, you will see a {{ NUM_ROWS }}x{{ NUM_COLS }}-matrix containing
             {{ Constants.num_boxes }} boxes on your screen.
         </p>
+
+        {{ if RANDOM }}
         <p>
             As soon as you start the task by hitting the 'Start' button,
-            one of the boxes is collected per second, starting from the top-left corner.
-            Once collected, the box marked by a tick symbol.
+            one of the boxes is collected per {{ TIME_INTERVAL }} second(s) at random.
+            Once collected, the box is marked by a tick symbol.
             For each box collected you earn {{ BOX_VALUE }}.
         </p>
+        {{ else }}
         <p>
+            As soon as you start the task by hitting the 'Start' button,
+            one of the boxes is collected per {{ TIME_INTERVAL }} second(s), starting from the top-left corner.
+            Once collected, the box is marked by a tick symbol.
+            For each box collected you earn {{ BOX_VALUE }}.
+        </p>
+        {{ endif }}
+
+         <p>
             Behind one of the boxes hides a bomb that destroys everything that has been collected.
             The remaining {{ num_nobomb }} boxes are worth {{ BOX_VALUE }} each.
             You do not know where the bomb is located.
@@ -66,7 +77,7 @@
         <p>
             Your task is to choose when to stop the collecting process. You do so by hitting 'Stop' at any time.
             If you collect the box where the bomb is located, the bomb will explode and you will earn zero.
-            If you stop before collecting the bomb, you gain the amount accumulated that far.
+            If you stop before collecting the bomb, you gain the amount accumulated thus far.
         </p>
         <p>
             At the end of the task boxes are toggled by hitting the 'Solve' button.

@@ -41,7 +41,7 @@ class Constants(BaseConstants):
     players_per_group = None
     results_1_round_template = __name__ + '/results_1_round.html'
     results_multi_round_template = __name__ + '/results_multi_round.html'
-    num_boxes = NUM_ROWS * NUM_COLS
+    num_boxes = NUM_ROWS * NUM_COLS # question: why does this need to be defined? we can simply acccess the num_boxes by always multiplying NUM_ROWS * NUM_COLS
 
 
 class Subsession(BaseSubsession):
@@ -74,7 +74,7 @@ def set_payoff(player: Player):
     else:
         player.round_result = player.boxes_collected * BOX_VALUE
     if round_number == 1:
-        participant.vars['round_to_pay'] = random.randint(1, NUM_ROUNDS)
+        participant.vars['round_to_pay'] = random.randint(1, NUM_ROUNDS) # question: possible bug: this means that the pay_off round could be the round where the user scored 0(bomb was selected). is that expected?
     if RANDOM_PAYOFF:
         if round_number == participant.vars['round_to_pay']:
             player.pay_this_round = True
@@ -122,7 +122,8 @@ class Game(Page):
         if DYNAMIC:
             input = False
         else:
-            input = not DEVILS_GAME
+            input = not DEVILS_GAME #question: failed to fix -- this logic had been reversed. For DEVILS_GAME==True, an
+            # input field is shown to the user to enter the number of boxes to choose. removing the `not` did not fix this issue
         return dict(reset=reset, input=input, **config_dict)
 
     @staticmethod

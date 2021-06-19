@@ -395,20 +395,20 @@
 		{
 			this.reset = this._getConstant('reset');
 
-			this.width = this._getConstant('WIDTH');
-			this.height = this._getConstant('HEIGHT');
-			
+			this.width = this._getConstant('BOX_WIDTH');
+			this.height = this._getConstant('BOX_HEIGHT');
+
 			this.rows = this._getConstant('NUM_ROWS');
 			this.cols = this._getConstant('NUM_COLS');
 
 			this.random = this._getConstant('RANDOM');
 			this.dynamic = this._getConstant('DYNAMIC');
-			this.interval = this._getConstant('INTERVAL');
+			this.interval = this._getConstant('TIME_INTERVAL');
 
 			this.feedback = this._getConstant('FEEDBACK');
 			this.undoable = this._getConstant('UNDOABLE');
 
-			this.input = this._getConstant('INPUT');
+			this.input = this._getConstant('DEVILS_GAME');
 		};
 
 	/**
