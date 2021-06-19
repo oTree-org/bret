@@ -41,7 +41,7 @@ class Constants(BaseConstants):
     players_per_group = None
     results_1_round_template = __name__ + '/results_1_round.html'
     results_multi_round_template = __name__ + '/results_multi_round.html'
-    num_boxes = NUM_ROWS * NUM_COLS # question: why does this need to be defined? we can simply acccess the num_boxes by always multiplying NUM_ROWS * NUM_COLS
+    num_boxes = NUM_ROWS * NUM_COLS
 
 
 class Subsession(BaseSubsession):
