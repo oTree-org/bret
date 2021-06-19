@@ -1,5 +1,5 @@
 from otree.api import cu
-#todo add git comment if we are following the original documentation, this file should be called `setup.py`
+#question: if we are following the original documentation, this file should be called `setup.py`
 # ---------------------------------------------------------------------------------------------------------------- #
 # --- Overall Settings and Appearance --- #
 # ---------------------------------------------------------------------------------------------------------------- #

@@ -395,7 +395,7 @@
 		{
 			this.reset = this._getConstant('reset');
 
-			this.width = this._getConstant('BOX_WIDTH'); //Add comment to PR: changing width and height in the config.py had no effect. had to update these constant names
+			this.width = this._getConstant('BOX_WIDTH');
 			this.height = this._getConstant('BOX_HEIGHT');
 
 			this.rows = this._getConstant('NUM_ROWS');
@@ -403,7 +403,7 @@
 
 			this.random = this._getConstant('RANDOM');
 			this.dynamic = this._getConstant('DYNAMIC');
-			this.interval = this._getConstant('TIME_INTERVAL'); //Add comment to PR: changing time interval in the config.py had no effect. had to update this constant's name
+			this.interval = this._getConstant('TIME_INTERVAL');
 
 			this.feedback = this._getConstant('FEEDBACK');
 			this.undoable = this._getConstant('UNDOABLE');
